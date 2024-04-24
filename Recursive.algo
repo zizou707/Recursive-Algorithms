@@ -1,0 +1,116 @@
+//Ticket Pricing:
+VAR
+ age : INTEGER ;
+BEGIN
+WRITE("Enter your age :");
+READ(age);
+IF (age<=12) THEN
+    Write("The Price is 10$");
+ELSE_IF (age>=13 && age<=17 ) THEN
+    WRITE("The Price is 15$");
+ELSE
+    WRITE("The Price is 20$");
+END_IF 
+END
+
+//Leap Year Checker: 
+
+BEGIN
+    FUNCTION IsL(y) : INTEGER
+       VAR
+       y : INTEGER;
+     BEGIN
+ 
+            WRITE("Enter the year :");
+            READ(y);
+         IF ( y%400 == 0 ) || ( y%100 == 0 && y%4 == 0 ) THEN
+                      RETURN 1
+              ELSE
+                      RETURN 0
+          END_IF
+  //writing the output
+       IF (y = 1) THEN 
+     WRITE("The year is Leap") 
+       ELSE WRITE("The year is not Leap")  
+     END
+  IsL(y)  ;
+END     
+//Fibonacci Sequence:
+VAR
+
+
+BEGIN
+FUNCTION Fibonacci(n) : INTEGER
+VAR
+  a=0,b=1 , n : INTEGER;
+   
+BEGIN
+  WRITE("Enter a positive number n");
+  READ(n);
+    IF (n==0) THEN
+        RETURN a
+    ELSE_IF (n==1) || (n==2) THEN
+        RETURN 
+            b
+      ELSE
+       RETURN Fibonacci(n-1) + Fibonacci(n) 
+       
+    END_IF
+   WRITE("Fibonacci of ",n+"is :",Fibonacci(n))
+END
+
+// Power Function: 
+
+ALGORITHM algorithm_name
+BEGIN
+FUNCTION power(n,i) : INTEGER
+   VAR
+    n ,i : INTEGER ;
+   BEGIN
+    WRITE("Enter the value of n");
+    READ(n);
+    WRITE("Enter the value of i");
+    READ(i);
+    IF (i==0) THEN
+        RETURN 1
+    ELSE_IF  (i==1) THEN
+        RETURN n
+     ELSE RETURN n*power(n,i-1)   
+    END_IF
+    RETURN power(n)
+   END
+ WRITE("n power of i =",power(n))  ;
+END
+
+//  Palindrome Checker:
+
+ALGORITHM Palindrome_Checker
+
+BEGIN
+   
+ FUNCTION Palindrome(str,i) : BOOLEAN
+ 
+    VAR
+      str  : STRING ;
+      i,n : INTEGER ;
+  BEGIN
+    n := str.lenght ;
+   
+    IF (i>n/2) THEN
+      RETURN TRUE
+    ELSE
+      RETURN str[i] == str[n-i-1] && Palindrome(str,i+1)
+    END_IF
+
+  END 
+ WRITE("Ente your String :") ;
+ READ(str);
+ IF (Palindrome(str,0)=TRUE) THEN
+  WRITE("Yes It is Palindrome")
+ ELSE
+  WRITE("No it is not Palindrome")
+ END_IF
+       
+END
+
+
