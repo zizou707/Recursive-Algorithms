@@ -55,7 +55,7 @@ BEGIN
         RETURN 
             b
       ELSE
-       RETURN Fibonacci(n-1) + Fibonacci(n) 
+       RETURN Fibonacci(n-1) + Fibonacci(n-2) 
        
     END_IF
    WRITE("Fibonacci of $(n) is : $(Fibonacci(n)))
